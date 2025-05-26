@@ -6,9 +6,9 @@ export interface ImageFormat {
   ext: string;
   mime: string;
   path: string | null;
-  width: Number;
-  height: Number;
-  size: Number;
-  sizeInBytes: Number;
+  width: number;
+  height: number;
+  size: number;
+  sizeInBytes: number;
   url: string;
 }

@@ -18,7 +18,7 @@ export interface Work {
   url: string;
   previewUrl: string | null;
   provider: string;
-  provider_metadata: any;
+  provider_metadata: string | null;
   createdAt: string;
   updatedAt: string;
   publishedAt: Date;
