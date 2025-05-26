@@ -5,8 +5,8 @@ export function getID(biourl: string): string {
       const url = new URL(biourl);
       const segments = url.pathname.split("/").filter(Boolean);
       return segments[0] ?? "";
-    } catch (e) {
-      console.error(e);
+    } catch (e: unknown) {
+      console.error('Error caught in getID.ts:', e);
       return "";
     }
   }
