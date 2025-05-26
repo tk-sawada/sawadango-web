@@ -1,7 +1,7 @@
 // contact/page.tsx
 
 import Image from "next/image";
-import { getID } from "@/utils/getID";
+import { getID } from "@/utils/getID2";
 import { getContact } from "@/utils/getContact"
 import { StrapiResponseContact } from "@/types/StrapiResponse";
 
