@@ -20,3 +20,9 @@ module.exports = {
     ],
   },
 }
+
+module.exports = {
+  images: {
+    domains: ['kind-wealth-bbafc33971.media.strapiapp.com'],
+  },
+};

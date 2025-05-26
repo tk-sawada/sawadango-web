@@ -46,7 +46,9 @@ export default function workPage() {
     <div className="p-6">
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
         {StrapiResponses?.data.map((ent, index) => {
-          const imageUrl = `${process.env.NEXT_PUBLIC_STRAPI_URL}${ent.Work.url}`;
+          // オンプレミスの際のurl設定
+          // const imageUrl = `${process.env.NEXT_PUBLIC_STRAPI_URL}${ent.Work.url}`;
+          const imageUrl = ent.Work.url;
           const imageWidth = ent.Work.width;
           const imageHeight = ent.Work.height;
           const imageDate = ent.Date;
