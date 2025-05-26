@@ -7,7 +7,7 @@ import { StrapiResponseBiography } from "@/types/StrapiResponse";
 // 完全静的生成にする
 export const revalidate = false;
 
-export default async function biographyPage() {
+export default async function BiographyPage() {
   const StrapiResponses: StrapiResponseBiography = await getBiographies();
 
   return (

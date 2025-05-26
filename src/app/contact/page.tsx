@@ -8,7 +8,7 @@ import { StrapiResponseContact } from "@/types/StrapiResponse";
 // 完全静的生成にする
 export const revalidate = false;
 
-export default async function contactPage() {
+export default async function ContactPage() {
   const StrapiResponses: StrapiResponseContact = await getContact();
 
   return (

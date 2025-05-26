@@ -13,6 +13,7 @@ function getMoonAge(date = new Date()): number {
 
 
 export default function TsukimiDangoIcon() {
+  
   const moonAge = getMoonAge();
 
   const renderMoon = () => {

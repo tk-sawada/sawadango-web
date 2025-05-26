@@ -14,7 +14,7 @@ type ModalImageInfo = {
   text: string | null;
 } | null;
 
-export default function workPage() {
+export default function WorkPage() {
   const [StrapiResponses, setStrapiResponse] = useState<StrapiResponseWork>();
   const [loading, setLoading] = useState(true);
   const [modalImage, setModalImage] = useState<ModalImageInfo>(null);
