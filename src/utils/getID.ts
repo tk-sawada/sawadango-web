@@ -6,6 +6,7 @@ export function getID(biourl: string): string {
       const segments = url.pathname.split("/").filter(Boolean);
       return segments[0] ?? "";
     } catch (e) {
+      console.error(e);
       return "";
     }
   }
