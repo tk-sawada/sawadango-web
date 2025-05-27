@@ -74,7 +74,7 @@ export default function WorkPage() {
                   src={imageUrl}
                   alt={ent.Work.name.toString()}
                   fill
-                  priority={index < 15} // 最初の3枚にのみ priority
+                  priority={index < 3} // 最初の3枚にのみ priority
                   className="object-cover grayscale transition duration-300 group-hover:grayscale-0"
                   sizes="(max-width: 640px) 100vw, 33vw"
                 />
