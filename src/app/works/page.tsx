@@ -74,7 +74,7 @@ export default function WorkPage() {
             >
               <div className="w-auto h-auto aspect-square relative">
                 <Image
-                  src={imageUrl}
+                  src={thumbnailUrl}
                   alt={ent.Work.name.toString()}
                   fill
                   priority={index < 3} // 最初の3枚にのみ priority
