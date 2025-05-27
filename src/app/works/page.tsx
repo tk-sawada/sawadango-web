@@ -7,6 +7,7 @@ import { StrapiResponseWork } from "@/types/StrapiResponse";
 
 // モーダルで使う画像情報の型
 type ModalImageInfo = {
+  thumbnail: string;
   url: string;
   width: number;
   height: number;
@@ -48,6 +49,7 @@ export default function WorkPage() {
         {StrapiResponses?.data.map((ent, index) => {
           // オンプレミスの際のurl設定
           // const imageUrl = `${process.env.NEXT_PUBLIC_STRAPI_URL}${ent.Work.url}`;
+          const thumbnailUrl = ent.Work.formats.thumbnail.url;
           const imageUrl = ent.Work.url;
           const imageWidth = ent.Work.width;
           const imageHeight = ent.Work.height;
@@ -60,6 +62,7 @@ export default function WorkPage() {
               className="group bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition cursor-pointer aspect-square"
               onClick={() => {
                 setModalImage({
+                  thumbnail: thumbnailUrl,
                   url: imageUrl,
                   width: imageWidth,
                   height: imageHeight,
