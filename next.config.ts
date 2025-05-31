@@ -23,6 +23,6 @@ module.exports = {
 
 module.exports = {
   images: {
-    domains: ['kind-wealth-bbafc33971.media.strapiapp.com'],
+    domains: ['kind-wealth-bbafc33971.media.strapiapp.com', 'engaging-authority-49579fa29f.media.strapiapp.com'],
   },
 };

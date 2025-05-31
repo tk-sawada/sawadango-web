@@ -74,7 +74,10 @@ export default function WorkPage() {
             >
               <div className="w-auto h-auto aspect-square relative">
                 <Image
-                  src={thumbnailUrl}
+                  // サムネイル画像を使う際の設定
+                  // src={thumbnailUrl}
+                  // オリジナルの画像を使う際の設定
+                  src={imageUrl}
                   alt={ent.Work.name.toString()}
                   fill
                   priority={index < 3} // 最初の3枚にのみ priority
