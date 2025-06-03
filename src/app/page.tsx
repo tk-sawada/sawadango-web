@@ -1,60 +1,37 @@
 "use client";
+import { useEffect, useState } from "react";
 
 function getMoonAge(date = new Date()): number {
-  const synodicMonth = 29.53058867; // 平均朔望月（新月周期）
-  const knownNewMoon = new Date(Date.UTC(2000, 0, 6, 18, 14)); // 2000年1月6日 18:14 UTC：新月（基準点）
-
-  const diff = date.getTime() - knownNewMoon.getTime(); // 経過時間（ミリ秒）
-  const days = diff / (1000 * 60 * 60 * 24); // 日数に変換
+  const synodicMonth = 29.53058867;
+  const knownNewMoon = new Date(Date.UTC(2000, 0, 6, 18, 14));
+  const diff = date.getTime() - knownNewMoon.getTime();
+  const days = diff / (1000 * 60 * 60 * 24);
   const moonAge = days % synodicMonth;
-
-  return moonAge < 0 ? moonAge + synodicMonth : moonAge; // 0～29.53 の範囲に正規化
+  return moonAge < 0 ? moonAge + synodicMonth : moonAge;
 }
 
-
 export default function TsukimiDangoIcon() {
-  
-  const moonAge = getMoonAge();
+  const [moonAge, setMoonAge] = useState<number | null>(null);
+
+  useEffect(() => {
+    setMoonAge(getMoonAge());
+  }, []);
+
+  if (moonAge === null) return null; // 初期化前
 
   const renderMoon = () => {
     if (moonAge < 1.5 || moonAge > 28) {
-      // 新月付近（ほぼ見えない）
       return null;
     } else if (moonAge < 7.4) {
-      // 三日月〜上弦
-      return (
-        <path
-          d="M57 10 A6 6 0 1 1 57 22 A3 6 0 1 0 57 10"
-          fill="lightgray"
-        />
-      );
+      return <path d="M57 10 A6 6 0 1 1 57 22 A3 6 0 1 0 57 10" fill="lightgray" />;
     } else if (moonAge < 13.8) {
-      // 半月〜満月前
-      return (
-        <path
-          d="M52 10 A6 6 0 1 1 52 22 L52 10 Z"
-          fill="lightgray"
-        />
-      );
+      return <path d="M52 10 A6 6 0 1 1 52 22 L52 10 Z" fill="lightgray" />;
     } else if (moonAge < 15.8) {
-      // 満月付近
       return <circle cx="52" cy="16" r="6" fill="yellow" />;
     } else if (moonAge < 22.1) {
-      // 満月〜下弦
-      return (
-        <path
-          d="M52 10 A6 6 0 1 1 52 22 A3 6 0 1 1 52 10"
-          fill="lightgray"
-        />
-      );
+      return <path d="M52 10 A6 6 0 1 1 52 22 A3 6 0 1 1 52 10" fill="lightgray" />;
     } else {
-      // 下弦〜三日月
-      return (
-        <path
-          d="M57 10 A6 6 0 1 1 57 22 A3 6 0 1 0 57 10"
-          fill="lightgray"
-        />
-      );
+      return <path d="M57 10 A6 6 0 1 1 57 22 A3 6 0 1 0 57 10" fill="lightgray" />;
     }
   };
 
@@ -86,5 +63,4 @@ export default function TsukimiDangoIcon() {
       </div>
     </div>
   );
-
 }
